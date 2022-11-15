@@ -1,0 +1,46 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 15px;
+}
+form h1 {
+  color: #656565;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  height: 37px;
+  width: 50%;
+  padding-left: 15px;
+  border: 1px solid #dde6e9;
+}
+form button {
+  height: 30px;
+  width: 53%;
+  border: 1px solid #dde6e9;
+  margin-bottom: 30px;
+  cursor: pointer;
+  color: #656565;
+}
+form label {
+  font-weight: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  color: #656565;
+}
+form span {
+  color: #cecece;
+  font-weight: Bold;
+  font-size: 11px;
+  line-height: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
