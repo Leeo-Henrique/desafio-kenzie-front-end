@@ -30,7 +30,7 @@ export const Form = ({ SetRes, SetLoading }) => {
     }
 
     SetLoading(true);
-    fetch("https://frontend-challenge-7bu3nxh76a-uc.a.run.app?delay=10000", {
+    fetch("https://frontend-challenge-7bu3nxh76a-uc.a.run.app", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
