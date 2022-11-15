@@ -5,26 +5,27 @@ export const Form = ({ SetRes, SetLoading }) => {
   const [Installments, SetInstallments] = useState("");
   const [Mdr, SetMdr] = useState("");
 
-  const Object = {
+  const Data = {
     amount: Amount,
     installments: Installments,
     mdr: Mdr,
   };
 
   const SendData = async () => {
-    if (Object.amount < 1000) {
+    // verificações do back-end
+    if (Data.amount < 1000) {
       window.alert("Amount cannot be less than 1000");
       return SetAmount(0);
     }
-    if (Object.installments < 1) {
+    if (Data.installments < 1) {
       window.alert("Installments cannot be less than 1");
       return SetInstallments(0);
     }
-    if (Object.installments > 12) {
+    if (Data.installments > 12) {
       window.alert("Installments cannot be greater than 12");
       return SetInstallments(0);
     }
-    if (Object.mdr > 100) {
+    if (Data.mdr > 100) {
       window.alert("Mdr cannot be greater than 100");
       return SetMdr(0);
     }
@@ -35,11 +36,15 @@ export const Form = ({ SetRes, SetLoading }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(Object),
+      body: JSON.stringify(Data),
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        if (res.message) {
+          // dependendo da resposta ela nao vai para o catch assim
+          // tratando de uma forma diferente
+          window.alert(`Algo deu errado, ${res.message}`);
+        }
         SetRes(res);
         SetLoading(false);
       })
