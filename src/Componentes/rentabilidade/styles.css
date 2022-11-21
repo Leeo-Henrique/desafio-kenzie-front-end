@@ -1,0 +1,32 @@
+.rent {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.line__blue {
+  background-color: #5d9cec;
+  opacity: 30%;
+}
+.rent span {
+  width: 85%;
+  height: 2px;
+}
+
+.rent h1 {
+  color: #3d75bb;
+  font-style: Bold Italic;
+  font-size: 16px;
+  line-height: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.rent p {
+  color: #5d9cec;
+  margin: 0;
+}
+.rent p span {
+  font-weight: 700;
+  font-style: italic;
+  line-height: 46px;
+}
