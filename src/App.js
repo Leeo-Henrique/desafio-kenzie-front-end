@@ -1,8 +1,8 @@
 import "./App.css";
-import { Formulario } from "./Components/formulario";
-import { Rentabilidade } from "./Components/rentabilidade";
+import { Formulario } from "./Componentes/formulario";
+import { Rentabilidade } from "./Componentes/rentabilidade";
 import { useState } from "react";
-import Loader from "./Components/loader";
+import Loader from "./Componentes/loader";
 function App() {
   const [responseApi, setResponseApi] = useState(null);
   const [loading, setLoading] = useState(false);
