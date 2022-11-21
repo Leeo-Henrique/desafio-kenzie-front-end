@@ -2,7 +2,7 @@ import "./form.css";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-export const Formulario = ({ SetRes, SetLoading }) => {
+export const Formulario = ({ setResponseApi, setLoading }) => {
   const [amount, setAmount] = useState("");
   const [installments, setInstallments] = useState("");
   const [mdr, setMdr] = useState("");
@@ -32,7 +32,7 @@ export const Formulario = ({ SetRes, SetLoading }) => {
       return setMdr(0);
     }
 
-    SetLoading(true);
+    setLoading(true);
     fetch("https://frontend-challenge-7bu3nxh76a-uc.a.run.app", {
       method: "POST",
       headers: {
@@ -47,12 +47,12 @@ export const Formulario = ({ SetRes, SetLoading }) => {
           // tratando de uma forma diferente
           toast.warning(`Algo deu errado, ${res.message}`);
         }
-        SetRes(res);
-        SetLoading(false);
+        setResponseApi(res);
+        setLoading(false);
       })
       .catch((err) => {
         toast.warning("Algo deu errado");
-        SetLoading(false);
+        setLoading(false);
       });
   };
 
