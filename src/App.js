@@ -1,17 +1,17 @@
 import "./App.css";
-import { Form } from "./Components/formulario";
-import { Rent } from "./Components/rentabilidade";
+import { Formulario } from "./Components/formulario";
+import { Rentabilidade } from "./Components/rentabilidade";
 import { useState } from "react";
 import Loader from "./Components/loader";
 function App() {
-  const [Res, SetRes] = useState(null);
-  const [Loading, SetLoading] = useState(false);
+  const [responseApi, setResponseApi] = useState(null);
+  const [loading, setLoading] = useState(false);
   return (
     <div className="App">
-      {Loading && <Loader />}
+      {loading && <Loader />}
       <main>
-        <Form SetRes={SetRes} SetLoading={SetLoading} />
-        <Rent Res={Res} />
+        <Formulario setResponseApi={setResponseApi} setLoading={setLoading} />
+        <Rentabilidade Res={responseApi} />
       </main>
     </div>
   );
